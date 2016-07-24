@@ -5,7 +5,7 @@
 plot2 <- function(){
     
     ## load data
-    power <- subset(read.csv2("household_power_consumption.txt"), Date == "1/2/2007" | Date == "2/2/2007")
+    power <- subset(read.csv2("household_power_consumption.txt", na.strings = "?", dec = "."), Date == "1/2/2007" | Date == "2/2/2007")
     
     power$Time <- strptime(paste(power$Date, power$Time, sep = "-"), "%d/%m/%Y-%H:%M:%S")
     
